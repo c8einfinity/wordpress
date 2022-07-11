@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  mysql-server:
+    image: mysql:8.0.29
+    container_name: wordpress-mysql-server
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=wordpress1234
+      - MYSQL_DATABASE=wordpress
+    volumes:
+      - "./database:/var/lib/mysql"
